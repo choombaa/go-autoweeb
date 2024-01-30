@@ -33,11 +33,10 @@ func GenerateImage(ctx *gin.Context) {
     ctx.JSON(http.StatusBadRequest, gin.H{"error": promptErr.Error()})
     return
   }
-  fmt.Println(imagePrompt)
 
   // Generate image
   go func() {
-    image, genErr = services.GenerateImage()
+    image, genErr = services.GenerateImage(imagePrompt)
     doneChannel <- true
   }()
   <-doneChannel
