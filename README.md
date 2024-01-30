@@ -1,2 +1,2 @@
 # go-autoweeb
-Autoweeb's backend, rewritten in Go
+Manga generator app backend, rewritten in Go
